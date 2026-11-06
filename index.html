@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <title>Restaurant POS & Billing System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Agar Magar</h2>
+                <p>Restaurant POS</p>
+            </div>
+
+
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-utensils"></i> Menu</a></li>
+                    <li><a href="#"><i class="fa-solid fa-receipt"></i> Billing</a></li>
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <h1>Restaurant Billing</h1>
+                    <p>Manage your orders and billing.</p>
+                </div>
+
+                <div class="header-actions">
+                    <input type="search" placeholder="Search food..." id="search-value">
+
+                    <a href="#"><i class="fa-regular fa-bell"></i></a>
+                    <a href="#"><i class="fa-regular fa-circle-user"></i></a>
+                </div>
+            </header>
+
+            <!-- Billing Section -->
+            <section class="billing-section">
+
+                <!-- Food Menu -->
+                <div class="menu-section">
+
+                    <div class="section-heading">
+                        <h2>Food Menu</h2>
+                        <p>Select your favourite food items.</p>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="categories">
+                        <button class="active" data-category="All">All</button>
+                        <button data-category="Pizza">Pizza</button>
+                        <button data-category="Burger">Burger</button>
+                        <button data-category="Sandwich">Sandwich</button>
+                        <button data-category="Drink">Drinks</button>
+                        <button data-category="French">French</button>
+                        <button data-category="Pasta">Pasta</button>
+                    </div>
+
+                    <div class="food-items" id="foodItems"></div>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="cart-section">
+
+                    <div class="cart-heading">
+                        <h2>Current Order</h2>
+                        <p>Your selected items</p>
+                    </div>
+
+                    <!-- Customer Details -->
+                    <div class="customer-details">
+                        <label for="customerName">Customer Name</label>
+                        <input type="text" id="customerName" placeholder="Enter customer name">
+
+                        <label for="customerPhone">Phone Number</label>
+                        <input type="tel" id="customerPhone" placeholder="Enter phone number">
+                    </div>
+
+                    <!-- Cart Items -->
+                    <div class="cart-items" id="cartItems">
+                        <p class="empty-cart">No items added yet.</p>
+                    </div>
+
+                    <!-- Billing Summary -->
+                    <div class="billing-summary">
+
+                        <div>
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹0</span>
+                        </div>
+
+                        <div>
+                            <span>GST (5%)</span>
+                            <span id="gst">₹0</span>
+                        </div>
+
+                        <div>
+                            <span>Discount</span>
+                            <span id="discount">₹0</span>
+                        </div>
+
+                        <div class="grand-total">
+                            <strong>Grand Total</strong>
+                            <strong id="grandTotal">₹0</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- Discount -->
+                    <div class="discount-section">
+                        <label for="discountInput">Discount Amount</label>
+                        <input type="number" id="discountInput" min="0" placeholder="Enter discount">
+                    </div>
+
+                    <!-- Payment -->
+                    <div class="payment-section">
+                        <label for="paymentMethod">Payment Method</label>
+
+                        <select id="paymentMethod">
+                            <option value="Cash">Cash</option>
+                            <option value="UPI">UPI</option>
+                            <option value="Card">Card</option>
+                        </select>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="cart-actions">
+                        <button id="clearCart">Clear Cart</button>
+                        <button id="generateBill">Generate Bill</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Invoice Section -->
+            <section class="invoice-section" id="invoiceSection">
+                <h2>Customer Invoice</h2>
+                <div id="invoiceContent"></div>
+                <button id="printInvoice">Print Invoice</button>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/billing.js"></script>
+
+</body>
+
+</html>
